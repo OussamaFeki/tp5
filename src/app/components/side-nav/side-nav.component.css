@@ -1,0 +1,22 @@
+.list{
+    float:left;
+    background: linear-gradient(120deg,black,aqua); 
+    width: 20%;
+    position: fixed;
+    height: 100%;
+}
+*{
+    text-decoration: none;
+    list-style: none;
+    margin: 0%;
+}
+a{
+    color: white;
+}
+li{
+    padding-bottom:1em;
+    
+}
+li:hover{
+    background-color: aqua;
+}

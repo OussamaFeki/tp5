@@ -1,0 +1,69 @@
+<div class="container">
+    <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+        <div class="row">
+            <div class="col-2">
+                <input type="text" name="prenom" placeholder="votre prénom" class="form-control" ngModel required>
+            </div>
+        </div>
+        <div *ngIf="myform.submitted && myform.controls['prenom'].invalid" class="row">
+            <div class="col-4">
+                <div class="alert alert-danger" >Prénom complet est requis</div>
+            </div> 
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-2">
+                <input type="text" name="nom" class="form-control" placeholder="votre nom" ngModel required>
+            </div>
+        </div>
+        <div *ngIf="myform.submitted && myform.controls['nom'].invalid" class="row">
+            <div class="col-4">
+                <div  class="alert alert-danger">Nom complet est requis</div>
+            </div>
+        </div>
+        
+        <br/>
+        <div class="row">
+            <div class="col-2">
+                <input type="email" name="email" class="form-control" placeholder="votre email" ngModel required>
+            </div>
+        </div>
+        <div *ngIf="myform.submitted && myform.controls['email'].invalid" class="row">
+            <div class="col-4">
+                <div class="alert alert-danger">Email est requis </div>
+            </div>
+        </div>
+        
+        <br/>
+        <div class="row">
+            <div class="col-2">
+                <input type="password" name="password" class="form-control" placeholder="****" ngModel required>
+            </div>
+        </div>
+        <div *ngIf="myform.submitted && myform.controls['password'].invalid" class="row">
+            <div class="col-4">
+                <div  class="alert alert-danger" >mot de passe est requis</div>
+            </div>
+        </div>
+        <br/>
+        <div class="row">
+            <div class="col-2">
+                <input type="password" name="confpassword" class="form-control" placeholder="****" ngModel required>
+            </div>
+        </div>
+        <div *ngIf="condition" class="row">
+            <div class="col-4">
+                <div class="alert alert-danger" >confirmation de mot de passe et mot de passe doivent être identique</div>  
+            </div>
+        </div>
+        <div *ngIf="myform.submitted && myform.controls['confpassword'].invalid" class="row">
+            <div class="col-4">
+                <div class="alert alert-danger" >confirmation  de mot de passe est requis </div> 
+            </div>
+        </div>
+        <br/>
+        <input type="submit" value="Envoyer">
+
+    </form>
+</div>
+<app-user-details [users]="userAciv"></app-user-details>
